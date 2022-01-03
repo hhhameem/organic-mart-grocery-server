@@ -22,8 +22,9 @@ async function run() {
     const database = client.db("organicMart");
     const productCollection = database.collection("product");
     const userCollection = database.collection("user");
+    const orderCollection = database.collection("order");
 
-    //saving registered user data
+    //save registered user data
     app.post("/user", async (req, res) => {
       const userData = req.body;
       const result = await userCollection.insertOne(userData);
@@ -41,7 +42,13 @@ async function run() {
     app.post("/product", async (req, res) => {
       const productData = req.body;
       const result = await productCollection.insertOne(productData);
+      res.json(result);
+    });
 
+    //save order data
+    app.post("/order", async (req, res) => {
+      const orderData = req.body;
+      const result = await orderCollection.insertOne(orderData);
       res.json(result);
     });
   } finally {
