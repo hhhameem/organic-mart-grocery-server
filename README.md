@@ -7,3 +7,5 @@
 2. product add: https://sheltered-caverns-74517.herokuapp.com/product (post request)
 
 3. all product fetch: https://sheltered-caverns-74517.herokuapp.com/product (get request)
+
+4. add user: https://sheltered-caverns-74517.herokuapp.com/user (post request)

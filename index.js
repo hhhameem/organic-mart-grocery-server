@@ -21,13 +21,23 @@ async function run() {
     await client.connect();
     const database = client.db("organicMart");
     const productCollection = database.collection("product");
+    const userCollection = database.collection("user");
 
+    //saving registered user data
+    app.post("/user", async (req, res) => {
+      const userData = req.body;
+      const result = await userCollection.insertOne(userData);
+      res.json(result);
+    });
+
+    //fetch product
     app.get("/product", async (req, res) => {
       const cursor = productCollection.find();
       const result = await cursor.toArray();
       res.json(result);
     });
 
+    //save product data
     app.post("/product", async (req, res) => {
       const productData = req.body;
       const result = await productCollection.insertOne(productData);
