@@ -11,3 +11,5 @@
 4. add user: https://sheltered-caverns-74517.herokuapp.com/user (post request)
 
 5. add order: https://sheltered-caverns-74517.herokuapp.com/order (post request)
+
+6. get user data: https://sheltered-caverns-74517.herokuapp.com/user?email="user email" (get request)
