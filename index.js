@@ -24,6 +24,14 @@ async function run() {
     const userCollection = database.collection("user");
     const orderCollection = database.collection("order");
 
+    //get registered user data by their email
+    app.get("/user", async (req, res) => {
+      const email = req.query.email;
+      query = { email };
+      const result = await userCollection.findOne(query);
+      res.json(result);
+    });
+
     //save registered user data
     app.post("/user", async (req, res) => {
       const userData = req.body;
