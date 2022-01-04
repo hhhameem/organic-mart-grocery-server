@@ -13,3 +13,7 @@
 5. add order: https://sheltered-caverns-74517.herokuapp.com/order (post request)
 
 6. get user data: https://sheltered-caverns-74517.herokuapp.com/user?email="user email" (get request)
+
+7. update order data: https://sheltered-caverns-74517.herokuapp.com/orders/:id (put request)
+
+8. delete order data: https://sheltered-caverns-74517.herokuapp.com/orders/:id (delete request)
