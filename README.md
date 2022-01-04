@@ -17,3 +17,5 @@
 7. update order data: https://sheltered-caverns-74517.herokuapp.com/orders/:id (put request)
 
 8. delete order data: https://sheltered-caverns-74517.herokuapp.com/orders/:id (delete request)
+
+9. get all order: https://sheltered-caverns-74517.herokuapp.com/order (get request)

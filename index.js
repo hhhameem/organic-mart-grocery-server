@@ -53,6 +53,13 @@ async function run() {
       res.json(result);
     });
 
+    //get all order data
+    app.get("/order", async (req, res) => {
+      const cursor = orderCollection.find();
+      const result = await cursor.toArray();
+      res.json(result);
+    });
+
     //order status update
     app.put("/orders/:id", async (req, res) => {
       const id = req.params.id;
