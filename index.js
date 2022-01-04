@@ -53,6 +53,34 @@ async function run() {
       res.json(result);
     });
 
+    //order status update
+    app.put("/orders/:id", async (req, res) => {
+      const id = req.params.id;
+      const updateStatus = req.body;
+
+      const filter = { _id: objectId(id) };
+      const options = { upsert: true };
+      const updateDoc = {
+        $set: {
+          status: updateStatus.status,
+        },
+      };
+      const result = await bicycleOrdersCollection.updateOne(
+        filter,
+        updateDoc,
+        options
+      );
+      res.json(result);
+    });
+
+    // DELETE ORDER
+    app.delete("/orders/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: objectId(id) };
+      const result = await bicycleOrdersCollection.deleteOne(query);
+      res.json(result);
+    });
+
     //save order data
     app.post("/order", async (req, res) => {
       const orderData = req.body;
